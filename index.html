@@ -1,1 +1,47 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Loving</title>
+	<script type="text/javascript" src="./jquery.min.js"></script>
+</head>
+<body>
+	<div class="container" style="display:none;">
+		To My Dear:
+		<br>
+		Without you?I'd be a soul without a purpose.
+		<br> 
+		Without you?I'd be an emotion without a heart.
+		<br>
+		I'm a face without expression,A heart with no beat.
+		<br> 
+		Without you by my side,I'm just a flame without the hot.
+		<br>
+		You make me feel so happy;
+		<br>
+		Whenever I'm with you.
+		<br>You make me feel so special--This love is too good to be true. 
+	</div>
+	<div class="trueContainer"></div>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var length=$('.container').text().length;
+		var text=$('.container').text();
+		var array=[];
+		for(var i =0 ;i <= length; i++){
+			array[i] = text.substr(i,1);
+		}
+		var t = 0;
+		function showText(){
+			if(t < length){
+				$('.trueContainer').append(array[t]);
+				t++;
+			}else{
+				$('.trueContainer').empty();
+				t=0;
+			}
+		}
+		setInterval(showText(),100);
+	})
+</script>
+</html>
